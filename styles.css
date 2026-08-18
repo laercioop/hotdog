@@ -196,11 +196,11 @@ body {
 .summary-panel {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(210px, 0.92fr) minmax(180px, 0.78fr) minmax(350px, 1.45fr);
+  grid-template-columns: minmax(285px, 0.78fr) minmax(500px, 1.45fr);
   grid-template-rows: minmax(0, 1fr);
-  column-gap: var(--space-xl);
+  gap: 20px;
   align-items: center;
-  padding: var(--space-lg) 20px;
+  padding: var(--space-md) var(--space-lg);
   background: var(--blue-soft);
   border-radius: 12px;
 }
@@ -212,7 +212,14 @@ body {
   font-weight: 900;
 }
 
-.raised-summary { align-self: center; }
+.funding-summary {
+  grid-column: 1;
+  min-width: 0;
+  align-self: stretch;
+  display: grid;
+  align-content: center;
+  gap: var(--space-lg);
+}
 
 .raised-summary strong {
   display: block;
@@ -231,16 +238,12 @@ body {
 }
 
 .campaign-stats {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: stretch;
+  min-width: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
-  align-content: center;
-  gap: var(--space-xl);
-  padding-left: 20px;
-  border-left: 1px solid oklch(0.78 0.035 247);
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid oklch(0.78 0.035 247);
 }
 
 .stat {
@@ -252,7 +255,7 @@ body {
 .stat span { color: var(--muted); font-size: 0.72rem; font-weight: 800; }
 .stat strong { margin-top: var(--space-xs); color: var(--navy); font-size: clamp(1.4rem, 2.4vw, 2.25rem); line-height: 1; white-space: nowrap; }
 .payment-panel {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 1;
   align-self: stretch;
   min-width: 0;
@@ -280,11 +283,11 @@ body {
 }
 
 .payment-details { min-width: 0; }
-.payment-details h2 { margin: 0 0 var(--space-sm); color: var(--navy); font-size: 1rem; line-height: 1; }
-.payment-details dl { margin: 0; display: grid; gap: 5px; }
+.payment-details h2 { margin: 0 0 var(--space-sm); color: var(--navy); font-size: 1.2rem; line-height: 1; }
+.payment-details dl { margin: 0; display: grid; gap: var(--space-sm); }
 .payment-details dl > div { min-width: 0; }
-.payment-details dt { color: var(--muted); font-size: 0.62rem; font-weight: 800; }
-.payment-details dd { margin: 0; color: var(--navy); font-size: 0.7rem; line-height: 1.15; font-weight: 900; overflow-wrap: anywhere; }
+.payment-details dt { color: var(--muted); font-size: 0.74rem; font-weight: 800; }
+.payment-details dd { margin: 1px 0 0; color: var(--navy); font-size: 0.88rem; line-height: 1.18; font-weight: 900; overflow-wrap: anywhere; }
 
 .whatsapp-notice {
   min-width: 0;
@@ -362,8 +365,8 @@ body {
   .campaign-update { display: none; }
   .campaign-logo { width: 72px; height: 72px; }
   .campaign-content { grid-template-rows:auto 150px; }
-  .summary-panel { grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:var(--space-xl); }
-  .campaign-stats { padding-left: var(--space-xl); }
+  .summary-panel { grid-template-columns:1fr; grid-template-rows:auto auto; gap:var(--space-xl); }
+  .funding-summary { grid-column:1; grid-row:1; }
   .payment-panel { grid-column:1 / -1; grid-row:2; padding:var(--space-xl) 0 0; border-left:0; border-top:1px solid oklch(0.78 0.035 247); }
   .payment-main { grid-template-columns:112px minmax(0,1fr); }
   .payment-qr { width:112px; }
@@ -387,8 +390,9 @@ body {
   .campaign-title h1 { font-size: 2rem; }
   .meter-panel { min-height: 440px; }
   .campaign-content { grid-template-rows: auto 230px; }
-  .summary-panel { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; gap: var(--space-lg); }
-  .campaign-stats { grid-column: 1; grid-row: auto; padding: var(--space-lg) 0 0; border-left: 0; border-top: 1px solid oklch(0.78 0.035 247); }
+  .summary-panel { grid-template-columns: 1fr; grid-template-rows: auto auto; gap: var(--space-lg); }
+  .funding-summary { grid-column:1; grid-row:1; }
+  .campaign-stats { grid-template-columns:1fr 1fr; }
   .payment-panel { grid-column:1; grid-row:auto; padding:var(--space-lg) 0 0; border-left:0; border-top:1px solid oklch(0.78 0.035 247); }
   .payment-main { grid-template-columns:108px minmax(0,1fr); }
   .payment-qr { width:108px; }
