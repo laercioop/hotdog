@@ -50,7 +50,7 @@ body {
   padding: var(--space-xl);
   display: grid;
   grid-template-rows: auto minmax(0, 1fr);
-  gap: var(--space-lg);
+  gap: var(--space-md);
   overflow: hidden;
   color: var(--white);
   background: var(--navy);
@@ -64,14 +64,6 @@ body {
   font-size: 0.72rem;
   font-weight: 900;
   text-transform: uppercase;
-}
-
-.meter-heading h2 {
-  margin: 0;
-  max-width: 10ch;
-  font-size: clamp(1.55rem, 2.1vw, 2.15rem);
-  line-height: 1.03;
-  text-wrap: balance;
 }
 
 .meter-visual {
@@ -204,9 +196,9 @@ body {
 .summary-panel {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(160px, 0.72fr) minmax(315px, 1.3fr);
-  grid-template-rows: 1fr auto;
-  column-gap: 20px;
+  grid-template-columns: minmax(210px, 0.92fr) minmax(180px, 0.78fr) minmax(350px, 1.45fr);
+  grid-template-rows: minmax(0, 1fr);
+  column-gap: var(--space-xl);
   align-items: center;
   padding: var(--space-lg) 20px;
   background: var(--blue-soft);
@@ -219,6 +211,8 @@ body {
   font-size: 0.86rem;
   font-weight: 900;
 }
+
+.raised-summary { align-self: center; }
 
 .raised-summary strong {
   display: block;
@@ -236,31 +230,15 @@ body {
   font-weight: 900;
 }
 
-.progress-track {
-  grid-column: 1;
-  align-self: end;
-  height: 8px;
-  overflow: hidden;
-  background: oklch(0.83 0.035 247);
-  border-radius: 4px;
-}
-
-.progress-fill {
-  width: 0%;
-  height: 100%;
-  background: var(--red);
-  border-radius: inherit;
-  transition: width 700ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
 .campaign-stats {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1;
   align-self: stretch;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr;
-  gap: var(--space-md);
+  grid-template-rows: repeat(2, auto);
+  align-content: center;
+  gap: var(--space-xl);
   padding-left: 20px;
   border-left: 1px solid oklch(0.78 0.035 247);
 }
@@ -273,11 +251,9 @@ body {
 .stat strong { display: block; }
 .stat span { color: var(--muted); font-size: 0.72rem; font-weight: 800; }
 .stat strong { margin-top: var(--space-xs); color: var(--navy); font-size: clamp(1.4rem, 2.4vw, 2.25rem); line-height: 1; white-space: nowrap; }
-.campaign-message { margin: 0; padding-top: var(--space-sm); align-self:end; color: var(--navy); font-size: 0.72rem; line-height:1.25; font-weight: 800; border-top: 1px solid oklch(0.78 0.035 247); }
-
 .payment-panel {
   grid-column: 3;
-  grid-row: 1 / span 2;
+  grid-row: 1;
   align-self: stretch;
   min-width: 0;
   display: grid;
@@ -290,13 +266,13 @@ body {
 .payment-main {
   min-height: 0;
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
-  gap: var(--space-md);
+  grid-template-columns: 144px minmax(0, 1fr);
+  gap: var(--space-lg);
   align-items: center;
 }
 
 .payment-qr {
-  width: 112px;
+  width: 144px;
   aspect-ratio: 1;
   display: block;
   object-fit: contain;
@@ -351,7 +327,6 @@ body {
 }
 
 .hotdog-heading h2 { margin: 0; max-width: 24ch; font-size: clamp(1.15rem, 1.7vw, 1.55rem); line-height: 1.08; text-wrap: balance; }
-.hotdog-heading p { margin: var(--space-xs) 0 0; color: oklch(0.84 0.025 253); font-size: 0.72rem; }
 .hotdog-total { flex: 0 0 auto; text-align: right; }
 .hotdog-total strong,
 .hotdog-total span { display: block; }
@@ -390,8 +365,8 @@ body {
   .summary-panel { grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:var(--space-xl); }
   .campaign-stats { padding-left: var(--space-xl); }
   .payment-panel { grid-column:1 / -1; grid-row:2; padding:var(--space-xl) 0 0; border-left:0; border-top:1px solid oklch(0.78 0.035 247); }
-  .payment-main { grid-template-columns:96px minmax(0,1fr); }
-  .payment-qr { width:96px; }
+  .payment-main { grid-template-columns:112px minmax(0,1fr); }
+  .payment-qr { width:112px; }
   .hotdog-panel { grid-template-columns: 250px 1fr; }
 }
 
@@ -413,7 +388,6 @@ body {
   .meter-panel { min-height: 440px; }
   .campaign-content { grid-template-rows: auto 230px; }
   .summary-panel { grid-template-columns: 1fr; grid-template-rows: auto auto auto auto; gap: var(--space-lg); }
-  .progress-track { grid-column: 1; }
   .campaign-stats { grid-column: 1; grid-row: auto; padding: var(--space-lg) 0 0; border-left: 0; border-top: 1px solid oklch(0.78 0.035 247); }
   .payment-panel { grid-column:1; grid-row:auto; padding:var(--space-lg) 0 0; border-left:0; border-top:1px solid oklch(0.78 0.035 247); }
   .payment-main { grid-template-columns:108px minmax(0,1fr); }

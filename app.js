@@ -2,8 +2,7 @@ const campaign = {
   goal: 1000,
   raised: 20,
   donors: 1,
-  updated: "17 de agosto de 2026",
-  message: "Estamos no começo. Sua ajuda faz a diferença."
+  updated: "17 de agosto de 2026"
 };
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
@@ -21,12 +20,10 @@ document.querySelectorAll("[data-raised]").forEach((item) => item.textContent = 
 document.querySelectorAll("[data-donors]").forEach((item) => item.textContent = formatNumber.format(donors));
 document.querySelectorAll("[data-remaining]").forEach((item) => item.textContent = currency.format(remaining));
 document.querySelector("[data-percent]").textContent = `${percent}% da meta`;
-document.querySelector("[data-message]").textContent = campaign.message;
 document.querySelector("[data-updated]").textContent = campaign.updated;
 document.querySelector("[data-hotdog-count]").textContent = formatNumber.format(hotdogCount);
 document.querySelector(".thermometer-fill").style.height = `${percent}%`;
 document.querySelector(".meter-labels").style.setProperty("--label-level", labelLevel);
-document.querySelector(".progress-fill").style.width = `${percent}%`;
 
 const meter = document.querySelector("[role=progressbar]");
 meter.setAttribute("aria-valuemax", goal);

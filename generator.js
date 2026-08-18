@@ -14,8 +14,7 @@ form.addEventListener("submit", (event) => {
     goal: Number(document.querySelector("#goal").value),
     raised: Number(document.querySelector("#raised").value),
     donors: Number(document.querySelector("#donors").value),
-    updated: dateInPortuguese(dateInput.value),
-    message: document.querySelector("#message").value.trim()
+    updated: dateInPortuguese(dateInput.value)
   };
   if (values.raised > values.goal) values.raised = values.goal;
   fetch("app.js").then((response) => response.text()).then((template) => {
