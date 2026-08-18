@@ -29,8 +29,12 @@ meter.setAttribute("aria-valuemax", goal);
 meter.setAttribute("aria-valuenow", cappedRaised);
 const wall = document.querySelector("[data-hotdog-wall]");
 const wallWidth = Math.max(wall.clientWidth, 280);
-const hotdogSize = Math.max(5, Math.min(44, Math.floor(Math.sqrt((wallWidth * 115) / (hotdogCount * 1.5)))));
-wall.style.setProperty("--hotdog-size", `${hotdogSize}px`);
+const wallHeight = Math.max(wall.clientHeight, 72);
+const pileRows = Math.min(7, Math.max(3, Math.ceil(Math.sqrt(hotdogCount / 5))));
+const pileColumns = Math.ceil(hotdogCount / pileRows);
+const hotdogSize = Math.max(5, Math.min(44, Math.floor(Math.min(wallWidth / (pileColumns * 0.66), wallHeight / (pileRows * 0.6)))));
+const pileWidth = pileColumns * hotdogSize * 0.66;
+const pileOffset = Math.max(0, (wallWidth - pileWidth) / 2);
 const fragment = document.createDocumentFragment();
 for (let i = 0; i < hotdogCount; i += 1) {
   const hotdog = document.createElement("img");
@@ -39,6 +43,13 @@ for (let i = 0; i < hotdogCount; i += 1) {
   hotdog.className = "hotdog";
   hotdog.loading = "lazy";
   hotdog.style.animationDelay = `${Math.min(i * 12, 500)}ms`;
+  const row = Math.floor(i / pileColumns);
+  const column = i % pileColumns;
+  const sway = ((i * 17) % 11) - 5;
+  hotdog.style.width = `${hotdogSize}px`;
+  hotdog.style.left = `${pileOffset + (column * hotdogSize * 0.66) + (row % 2 ? hotdogSize * 0.2 : 0)}px`;
+  hotdog.style.bottom = `${row * hotdogSize * 0.6}px`;
+  hotdog.style.transform = `rotate(${sway}deg)`;
   fragment.append(hotdog);
 }
 wall.append(fragment);
