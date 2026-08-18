@@ -11,7 +11,7 @@ Dashboard estático da campanha de arrecadação para a Festa de São Pio X.
 
 ## Atualização dos dados
 
-1. Abra `gerador.html` pelo site publicado no GitHub Pages.
+1. No Windows, dê dois cliques em `iniciar-gerador.bat` para abrir o gerador localmente. Também é possível abrir `gerador.html` pelo site publicado no GitHub Pages.
 2. Informe a meta, o valor arrecadado, o número de doadores, a data e a mensagem.
 3. Baixe o novo `app.js`.
 4. Substitua o `app.js` no repositório e envie a alteração ao GitHub. O GitHub Pages atualiza o dashboard em seguida.
