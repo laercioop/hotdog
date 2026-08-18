@@ -28,6 +28,9 @@ const meter = document.querySelector("[role=progressbar]");
 meter.setAttribute("aria-valuemax", goal);
 meter.setAttribute("aria-valuenow", cappedRaised);
 const wall = document.querySelector("[data-hotdog-wall]");
+const wallWidth = Math.max(wall.clientWidth, 280);
+const hotdogSize = Math.max(5, Math.min(44, Math.floor(Math.sqrt((wallWidth * 115) / (hotdogCount * 1.5)))));
+wall.style.setProperty("--hotdog-size", `${hotdogSize}px`);
 const fragment = document.createDocumentFragment();
 for (let i = 0; i < hotdogCount; i += 1) {
   const hotdog = document.createElement("img");
