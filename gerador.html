@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atualizar Campanha Hotdog | ASJ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,500;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body{min-height:100vh;display:grid;place-items:center;padding:24px;background:var(--sky)}.generator{width:min(100%,640px);background:var(--white);padding:clamp(25px,6vw,58px);border-top:7px solid var(--red)}.generator-logo{width:145px;display:block;margin-bottom:20px}.generator h1{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:12px}.generator p{color:var(--muted);line-height:1.55}.generator form{display:grid;gap:18px;margin-top:30px}.generator label{display:grid;gap:7px;font-size:.9rem;font-weight:900;color:var(--blue)}.generator input,.generator textarea{width:100%;border:2px solid var(--line);border-radius:5px;padding:12px 14px;background:var(--white);color:var(--ink);font:inherit;font-weight:700}.generator input:focus,.generator textarea:focus{outline:3px solid oklch(0.75 .1 250);outline-offset:1px;border-color:var(--blue)}.generator textarea{min-height:88px;resize:vertical}.generator button{justify-self:start;border:0;border-radius:5px;padding:13px 20px;background:var(--blue);color:var(--white);font:800 1rem "Nunito Sans",sans-serif;cursor:pointer}.generator button:hover{background:var(--blue-deep)}.generator .hint{font-size:.82rem;margin:0}.success{display:none;margin:4px 0 0;color:var(--blue);font-weight:900}.success.show{display:block}
+    </style>
+  </head>
+  <body>
+    <main class="generator">
+      <img src="asj-hotdog-logo.png" alt="ASJ Hotdog" class="generator-logo" />
+      <p class="campaign-kicker">Painel de atualizacao</p>
+      <h1>Atualize a campanha.</h1>
+      <p>Preencha os dados atuais. Ao baixar, substitua o arquivo <strong>app.js</strong> no repositorio e publique no GitHub Pages.</p>
+      <form id="generator-form">
+        <label>Meta da campanha (R$)<input id="goal" type="number" min="1" step="0.01" value="1200" required /></label>
+        <label>Valor ja arrecadado (R$)<input id="raised" type="number" min="0" step="0.01" value="0" required /></label>
+        <label>Quantas pessoas doaram?<input id="donors" type="number" min="0" step="1" value="0" required /></label>
+        <label>Data da atualizacao<input id="updated" type="date" required /></label>
+        <label>Mensagem de incentivo<textarea id="message">Estamos no comeco. Sua ajuda faz a diferenca.</textarea></label>
+        <button type="submit">Baixar app.js atualizado</button>
+        <p class="hint">O dashboard exibira 20 hotdogs iniciais e mais um para cada R$ 1,00 arrecadado.</p>
+        <p class="success" id="success" role="status">Arquivo gerado. Agora envie-o para o GitHub, substituindo o app.js anterior.</p>
+      </form>
+    </main>
+    <script src="generator.js"></script>
+  </body>
+</html>
