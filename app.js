@@ -1,7 +1,7 @@
 const campaign = {
   goal: 1000,
   raised: 20,
-  donors: 0,
+  donors: 1,
   updated: "17 de agosto de 2026",
   message: "Estamos no começo. Sua ajuda faz a diferença."
 };
