@@ -4,7 +4,7 @@ dateInput.value = new Date().toISOString().slice(0, 10);
 
 function dateInPortuguese(value) {
   const [year, month, day] = value.split("-");
-  const months = ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
+  const months = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
   return `${Number(day)} de ${months[Number(month) - 1]} de ${year}`;
 }
 
@@ -27,5 +27,5 @@ form.addEventListener("submit", (event) => {
     link.click();
     URL.revokeObjectURL(link.href);
     document.querySelector("#success").classList.add("show");
-  }).catch(() => alert("Nao foi possivel ler o app.js. Abra o gerador pelo GitHub Pages ou por um servidor local."));
+  }).catch(() => alert("Não foi possível ler o app.js. Abra o gerador pelo GitHub Pages ou por um servidor local."));
 });

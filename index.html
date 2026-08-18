@@ -2,83 +2,98 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Acompanhe a arrecadacao da campanha do Hotdog da Festa de Sao Pio X." />
-    <title>Campanha Hotdog | ASJ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="Acompanhe a arrecadação da campanha do Hotdog da Festa de São Pio X." />
+    <title>Campanha do Hotdog | Associação São José</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito+Sans:opsz,wght@6..12,500;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500;6..12,700;6..12,800;6..12,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="campaign-shell">
-      <section class="campaign-intro" aria-labelledby="campaign-title">
-        <div class="brand-lockup">
-          <img src="asj-hotdog-logo.png" alt="ASJ Hotdog" class="logo" />
-          <p>Festa de Sao Pio X</p>
+    <main class="campaign-dashboard">
+      <section class="meter-panel" aria-labelledby="meter-title">
+        <div class="meter-heading">
+          <p>Campanha de arrecadação</p>
+          <h2 id="meter-title">Rumo à nossa meta</h2>
         </div>
-        <p class="campaign-kicker">Campanha de arrecadacao</p>
-        <h1 id="campaign-title">Cada real ajuda a colocar a festa de pe.</h1>
-        <p class="campaign-copy">Estamos reunindo a comunidade para tornar a barraca de hotdog uma bonita realidade na Festa de Sao Pio X.</p>
-        <div class="goal-note">
-          <span>Meta da campanha</span>
-          <strong data-goal>R$ 1.200,00</strong>
+
+        <div class="meter-visual">
+          <div class="thermometer" role="progressbar" aria-valuemin="0" aria-valuemax="1200" aria-valuenow="0" aria-labelledby="meter-title">
+            <div class="thermometer-tube">
+              <div class="thermometer-fill"></div>
+            </div>
+            <div class="thermometer-neck"></div>
+            <div class="thermometer-bulb"></div>
+          </div>
+
+          <div class="meter-labels" aria-hidden="true">
+            <div class="meter-label meter-label-goal">
+              <span>Meta</span>
+              <strong data-goal>R$ 1.200,00</strong>
+            </div>
+            <div class="meter-label meter-label-current">
+              <span>Arrecadado</span>
+              <strong data-raised>R$ 0,00</strong>
+            </div>
+            <div class="meter-label meter-label-zero">R$ 0,00</div>
+          </div>
         </div>
       </section>
 
-      <section class="progress-section" aria-labelledby="progress-title">
-        <header class="progress-header">
-          <p class="campaign-kicker">Acompanhamento</p>
-          <h2 id="progress-title">Nossa arrecadacao</h2>
-          <p class="updated" data-updated>Atualizado em 17 de agosto de 2026</p>
-        </header>
+      <header class="campaign-header">
+        <div class="campaign-title">
+          <p>Associação São José apresenta</p>
+          <h1>Campanha do Hotdog</h1>
+          <span>Festa de São Pio X</span>
+        </div>
+        <div class="campaign-update">
+          <span>Última atualização</span>
+          <strong data-updated>17 de agosto de 2026</strong>
+        </div>
+        <img src="asj-hotdog-logo.png" alt="ASJ Hotdog, Dogão da Tradição" class="campaign-logo" />
+      </header>
 
-        <div class="progress-layout">
-          <div class="thermometer-wrap" aria-label="Termometro de arrecadacao">
-            <div class="thermometer-scale" aria-hidden="true">
-              <span class="scale-top" data-goal>R$ 1.200,00</span>
-              <span class="scale-middle" data-raised>R$ 0,00</span>
-              <span class="scale-bottom">R$ 0,00</span>
-            </div>
-            <div class="thermometer" role="progressbar" aria-valuemin="0" aria-valuemax="1200" aria-valuenow="0" aria-labelledby="progress-title">
-              <div class="thermometer-tube"><div class="thermometer-fill"></div></div>
-              <div class="thermometer-bulb"></div>
-            </div>
+      <div class="campaign-content">
+        <section class="summary-panel" aria-labelledby="summary-title">
+          <div class="raised-summary">
+            <p id="summary-title">Já arrecadamos</p>
+            <strong data-raised>R$ 0,00</strong>
+            <span data-percent>0% da meta</span>
+          </div>
+
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill"></div>
           </div>
 
           <div class="campaign-stats">
-            <div class="stat stat-main">
-              <span>Ja arrecadamos</span>
-              <strong data-raised>R$ 0,00</strong>
-              <p data-percent>0% da meta</p>
+            <div class="stat">
+              <span>Pessoas que doaram</span>
+              <strong data-donors>0</strong>
             </div>
-            <div class="stat-grid">
-              <div class="stat">
-                <span>Pessoas que doaram</span>
-                <strong data-donors>0</strong>
-              </div>
-              <div class="stat stat-remaining">
-                <span>Falta para a meta</span>
-                <strong data-remaining>R$ 1.200,00</strong>
-              </div>
+            <div class="stat">
+              <span>Falta para a meta</span>
+              <strong data-remaining>R$ 1.200,00</strong>
             </div>
-            <p class="stat-message" data-message>Estamos no comeco. Sua ajuda faz a diferenca.</p>
+            <p class="campaign-message" data-message>Estamos no começo. Sua ajuda faz a diferença.</p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="hotdog-section" aria-labelledby="hotdog-title">
-        <div class="hotdog-heading">
-          <div>
-            <p class="campaign-kicker">Um real, um hotdog</p>
-            <h2 id="hotdog-title">A festa ja esta ficando gostosa.</h2>
+        <section class="hotdog-panel" aria-labelledby="hotdog-title">
+          <div class="hotdog-heading">
+            <div>
+              <h2 id="hotdog-title">Cada real vira um hotdog no nosso mural.</h2>
+              <p>A pilha cresce junto com a campanha.</p>
+            </div>
+            <div class="hotdog-total">
+              <strong data-hotdog-count>20</strong>
+              <span>hotdogs</span>
+            </div>
           </div>
-          <p><strong data-hotdog-count>20</strong> hotdogs no nosso mural</p>
-        </div>
-        <div class="hotdog-wall" data-hotdog-wall aria-live="polite"></div>
-      </section>
+          <div class="hotdog-stage" data-hotdog-wall aria-live="polite"></div>
+        </section>
+      </div>
     </main>
-    <footer><span>Associacao Sao Jose</span><span>Festa de Sao Pio X</span></footer>
     <script src="app.js"></script>
   </body>
 </html>
