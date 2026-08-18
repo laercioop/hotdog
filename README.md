@@ -16,4 +16,4 @@ Dashboard estático da campanha de arrecadação para a Festa de São Pio X.
 3. Baixe o novo `app.js`.
 4. Substitua o `app.js` no repositório e envie a alteração ao GitHub. O GitHub Pages atualiza o dashboard em seguida.
 
-O mural começa com 20 hotdogs e recebe mais um para cada R$ 1,00 arrecadado.
+O mural exibe um hotdog para cada R$ 1,00 arrecadado.

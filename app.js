@@ -14,7 +14,7 @@ const donors = Math.max(0, Number(campaign.donors) || 0);
 const remaining = Math.max(goal - raised, 0);
 const percent = Math.round((raised / goal) * 100);
 const labelLevel = Math.min(86, Math.max(8, percent));
-const hotdogCount = Math.min(20 + Math.round(raised), 1220);
+const hotdogCount = Math.min(Math.round(raised), Math.round(goal));
 
 document.querySelectorAll("[data-goal]").forEach((item) => item.textContent = currency.format(goal));
 document.querySelectorAll("[data-raised]").forEach((item) => item.textContent = currency.format(raised));
