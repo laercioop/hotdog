@@ -1,8 +1,8 @@
 const campaign = {
   goal: 1000,
-  raised: 20,
-  donors: 1,
-  updated: "17 de agosto de 2026"
+  raised: 65,
+  donors: 3,
+  updated: "18 de agosto de 2026"
 };
 
 const currency = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
